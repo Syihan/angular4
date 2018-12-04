@@ -1,0 +1,22 @@
+<h2>Photos of Black Holes</h2>
+<table style="height: 300px;">
+  <tr>
+    <td>
+      <ul>
+        <li style="list-style: none;">
+          <button (click)="hideImage()"
+                  class="btn btn-primary"
+                  style="background-color: red; border-width: 0px; width: 100%;">
+                  Hide Image
+          </button>
+        </li>
+        <li *ngFor="let photo of photos" style="list-style: none;">
+          <button (click)="showImage(photo)" class="btn btn-primary" style="width: 100%;">{{getCondensed(photo)}}</button>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <img [src]="selectedPhoto" [hidden]="isHidden" height="250"/>
+    </td>
+  </tr>
+</table>
